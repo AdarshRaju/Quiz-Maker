@@ -121,8 +121,8 @@ import React, {useState} from 'react';
         
         <button className="generate" onClick={generate}>Generate</button>
         <div className='nav-button-container'>
-        <button className="prev" onClick={prev} disabled={page == 0 ? true : false} >Previous</button>
-        <button className="next" onClick={next} disabled={page == (answers.length -1) ? true : false} >Next</button>
+        <button className="prev" onClick={prev} disabled={page == 0 || num == 0 ? true : false} >Previous</button>
+        <button className="next" onClick={next} disabled={page == (answers.length -1) || num == 0 ? true : false} >Next</button>
         </div>
         <Question question={questions[page]} i={page} />
         <Radio answers={answers} wronganswers={wronganswers} page={page} handleradio={handleradio} anscheck={anscheck} />
