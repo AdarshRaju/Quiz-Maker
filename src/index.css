@@ -19,6 +19,7 @@ h1 {
     align-items: center;
     text-align: center;
     text-shadow: 1px 1px 21px;
+    letter-spacing: 12px;
 }
 
 button {
