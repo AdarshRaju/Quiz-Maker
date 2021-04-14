@@ -13,6 +13,15 @@ import React, {useState} from 'react';
         const [seloptions, setSeloptions] = useState('')
     
         const feedb = document.getElementById('feedback')
+        
+        function reset(){    
+        setQuestions([])
+        setAnswers([])
+        setWrongAnswers([])
+        setPage(0)
+        setSeloptions('')
+        }
+        
         function generate(){
             setQuestions([])
             setWrongAnswers([])
@@ -70,7 +79,7 @@ import React, {useState} from 'react';
          }
     return(<div className="MainContainer" >
     <h1> Quiz</h1>
-    <App num={num} setNum={setNum} difficulty={difficulty} setDifficulty={setDifficulty} generate={generate} answers={answers} wronganswers={wronganswers} prev={prev} next={next} page={page} questions={questions} handleradio={handleradio} anscheck={anscheck}/> 
+    <App num={num} setNum={setNum} difficulty={difficulty} setDifficulty={setDifficulty} generate={generate} answers={answers} wronganswers={wronganswers} prev={prev} next={next} page={page} questions={questions} handleradio={handleradio} anscheck={anscheck} reset={reset}/> 
     </div>)
     }
     
@@ -101,13 +110,14 @@ import React, {useState} from 'react';
             </form>)
     }
     
-    function App({num, difficulty, setNum, setDifficulty, generate, questions, answers, wronganswers, prev, next, page, handleradio, anscheck}) {
+    function App({num, difficulty, setNum, setDifficulty, generate, questions, answers, wronganswers, prev, next, page, handleradio, anscheck, reset}) {
         
         return(<div className="App">
         <label>Enter difficulty:  
         <select className="difficulty" name='difficulty' id='difficulty' defaultValue={difficulty} onChange={(e) => 
-            setDifficulty(e.target.value)
-            }>
+            {reset()
+                setDifficulty(e.target.value)      
+            }}>
         <option value='easy' >Easy</option>
         <option value='medium' >Medium</option>
         <option value='hard' >Hard</option>
@@ -115,14 +125,15 @@ import React, {useState} from 'react';
         </label>
         <label>Enter no. of questions:     
         <input className="num" placeholder="1" type="number" min='1' max = '50' name='no_of_ques' id='no_of_ques' defaultValue={num} onChange={(e) => 
-            setNum(e.target.value)
-            } />
+            {reset()
+                setNum(e.target.value)
+            }}/>
         </label>
         
         <button className="generate" onClick={generate}>Generate</button>
         <div className='nav-button-container'>
         <button className="prev" onClick={prev} disabled={page == 0 || num == 0 ? true : false} >Previous</button>
-        <button className="next" onClick={next} disabled={page == (answers.length -1) || num == 0 ? true : false} >Next</button>
+        <button className="next" onClick={next} disabled={page == (answers.length -1) || num == 0 || answers.length === 0 ? true : false} >Next</button>
         </div>
         <Question question={questions[page]} i={page} />
         <Radio answers={answers} wronganswers={wronganswers} page={page} handleradio={handleradio} anscheck={anscheck} />
