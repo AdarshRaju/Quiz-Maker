@@ -4,7 +4,7 @@ import React, {useState} from 'react';
     
     // const url = 'https://opentdb.com/api.php?amount=10&category=27&type=multiple'
     function MainWrapper(props) {
-        const [num, setNum] = useState(7) 
+        const [num, setNum] = useState(0) 
         const [difficulty, setDifficulty] = useState('easy')
         const [questions, setQuestions] = useState([])
         const [answers, setAnswers] = useState([])
