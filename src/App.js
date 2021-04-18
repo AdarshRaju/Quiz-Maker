@@ -99,13 +99,13 @@ import React, {useState} from 'react';
             
             <form className='options' key={page} onSubmit={anscheck} onChange={handleradio}>
             
-            <label htmlFor='answer'><input className="radio" type='radio' name='answer' id={b[0].id} value={b[0].value} ></input>{b[0].answer}</label>
+            <label htmlFor={b[0].id}><input className="radio" type='radio' name='answer' id={b[0].id} value={b[0].value} ></input>{b[0].answer}</label>
             
-            <label htmlFor='answer'><input className="radio" type='radio' name='answer' id={b[1].id} value={b[1].value} ></input>{b[1].answer}</label>
+            <label htmlFor={b[1].id}><input className="radio" type='radio' name='answer' id={b[1].id} value={b[1].value} ></input>{b[1].answer}</label>
             
-            <label htmlFor='answer'><input className="radio" type='radio' name='answer' id={b[2].id} value={b[2].value} ></input>{b[2].answer}</label>
+            <label htmlFor={b[2].id}><input className="radio" type='radio' name='answer' id={b[2].id} value={b[2].value} ></input>{b[2].answer}</label>
             
-            <label htmlFor='answer'><input className="radio" type='radio' name='answer' id={b[3].id} value={b[3].value} ></input>{b[3].answer}</label>
+            <label htmlFor={b[3].id}><input className="radio" type='radio' name='answer' id={b[3].id} value={b[3].value} ></input>{b[3].answer}</label>
             <button id="submit" className="submit" disabled>Submit</button>
             </form>)
     }
