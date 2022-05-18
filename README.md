@@ -5,3 +5,5 @@ This React app fetches an API from an external website and creates a multiple ch
 (The API was also causing react to throw an error whenever I was trying to access an array within an array grabbed from the json file - as in the array incorrect_answers[0][0]. I have tried changing the Cross-Origin Resource Sharing (CORS) which did not work here. I have had to rewrite the code in a particular way for the app to fetch the json data without causing it to crash).
 
 The react code is in src folder named App.js.
+The CSS code is in src folder named index.css.
+Copy these files to the src folder created by Create React App in the local folder to access the app with npm start.
