@@ -6,4 +6,4 @@ This React app fetches an API from an external website and creates a multiple ch
 
 The react code is in src folder named App.js.
 The CSS code is in src folder named index.css.
-Copy these files to the src folder created by Create React App in the local folder to access the app with npm start.
+Replace these files to the src folder created by Create React App in your local folder to access the app with npm start.
